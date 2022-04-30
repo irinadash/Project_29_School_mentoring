@@ -8,7 +8,7 @@ const checkAge = function (age) {
             if (!isNaN(age)) {
             //if(+age){
                   if (age < age_2) {
-                        console.log("You don't have access cause your age is " + age + "It's less then " + age_2)
+                        console.log("You don't have access cause your age is " + age + " It's less then " + age_2)
                   } else if (age >= age_2 && age < age_3) {
                         console.log("Welcome !")
                   } else if (age > age_3) {
@@ -16,8 +16,8 @@ const checkAge = function (age) {
                   } else {
                         console.log('Technical work.')
                   }
-            }
-      }
+            } 
+      } else { console.log('Not integer value')}
 }
 checkAge(17);
 checkAge(18);
