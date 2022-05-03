@@ -69,11 +69,99 @@ printSmile2(':)', 6)
 // В консоли:
 // Слово (word) состоит из  (число) гласных и (число) согласных букв
 // Проверки: 'case', 'Case', 'Check-list'
+const getWordStructure = function (word) {
+      let n = 0;
+      let k = 0;
+      let gl = ["a", " A", "e", "E", "i", "I", "o", "O", "u", "U", "y", "Y"];
+      let sogl = ["b", "B", "c", "C", "d", "D", "f", "F", "g", "G", "h", "H", "j", "J", "k", "K", "l", "L", "m", "M",
+            "n", "N", "p", "P", "q", "Q", "r", "R", "s", "S", "t", "T", "v", "V", "w", "W", "x", "X", "z", "Z"];
+      for (let i = 0; i < word.length; i++){
+            for (let j = 0; j < gl.length; j++){
+                  if (word[i] === gl[j]) {
+                        n++;
+                        break;
+                  }
+            }
+            for (let q = 0; q < sogl.length; q++){
+                  if (word[i] === sogl[q]) {
+                        k++;
+                        break;
+                  }
+            }
+      }
+      console.log(`Слово ${word} состоит из ${n} гласных и ${k} согласных`)
+}
+getWordStructure("case")
+getWordStructure("Case")
+getWordStructure("Check-list")
+ 
+// 3**/II
+function getWordStructure2(word) {
+      const vowels = 'aeiouy'.split('');
+      const consonants = 'bcdfghklmnpqrstvwxz'.split('')
+      let numberOfVowels = 0;
+      let numberOfConsonants = 0;
+      for (char of word.toLowerCase()) {
+            if (vowels.includes(char)) {
+                  numberOfVowels++
+            };
+            if (consonants.includes(char)) {
+                  numberOfConsonants++
+            }
+      }
+      console.log(`Слово ${word} состоит из ${numberOfVowels} глассных и ${numberOfConsonants} согласных букв`)
+}
+getWordStructure2("case")
+getWordStructure2("Case")
+getWordStructure2("Check-list")
 
-
-
+// 3**/III
+function getWordStructure3(word) {
+      let vowels = word.match(/[aeiouy]/gi);
+      const consonants = word.match(/[bcdfghklmnpqrstvwxz]/gi);
+      console.log(`Word ${word} consists of ${vowels.length} vowel and ${consonants.length} consonants`)
+}
+getWordStructure3("case")
+getWordStructure3("Case")
+getWordStructure3("Check-list")
 
 // 4**. Написать функцию, которая проверяет, является ли слово палиндромом
 // e.g. function isPalindrom(word)
-
 // Проверки: 'abba', 'Abba'
+function isPalindrom(word) {
+      let newStr = '';
+      for (let i = word.length - 1; i >= 0; i--){
+            newStr += word[i];
+      }
+      if (word.toLowerCase() == newStr.toLowerCase()) {
+            console.log(word, '- palindrom')
+      } else {
+            console.log(word, '- no palindrom')
+      }
+}
+isPalindrom('Ab1ba')
+isPalindrom('Ab12ba')
+
+function isPalindrom2(str) {
+      str = str.toLowerCase()
+
+      // find the length of the string
+      const len = str.length;
+      
+      // loop through half of the string
+      for (let i = 0; i < len / 2; i++){
+            
+            //check ir first and last string are same
+            if (str[i] !== str[len - 1 - i]) {
+                  return 'It is not a palindrome';
+            }
+      }
+      return 'It is a palindrome';
+}
+console.log(isPalindrom2('alllla'))
+
+function isPalindrom3(word) {
+      return word.toLowerCase() == word.toLowerCase().split('').reverse().join('')
+}
+console.log(`${isPalindrom3('Ab12ba')? 'It is a palindrome' : 'It is not a palindrome'}`)
+console.log(`${isPalindrom3('Abba')? 'It is a palindrome' : 'It is not a palindrome'}`)
