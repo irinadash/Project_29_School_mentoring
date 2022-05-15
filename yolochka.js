@@ -5,7 +5,6 @@ function yolochka1(item_1, item_2) {
 
 }
 
-
 //yolochka1(11,22)
 
 function f1() {
@@ -26,9 +25,7 @@ let f33 = (t1 > t2) ?
 
 f33(t3, t4)
 
-
 function yolochka33() {}
-
 
 yolochka33.prototype.fast = function () {
       console.log('FAST !!')
@@ -48,13 +45,9 @@ let forest = new yolochka33()
 forest.green(4500, 50)
 forest.shishki()
 
-
-
-
 // let name = ['Kate',
 //       'Alex',
 //       'Ivan',
 //       'Ignat',
 //       'Andey',
 //       'Vika']
-
