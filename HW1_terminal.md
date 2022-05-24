@@ -33,7 +33,7 @@
     cp folder1/t3.txt folder2/t3.txt
     cp folder1/json1.json folder2/json1.json
 15. Найти файл по имени
-    find . t2.txt
+    find . -name "t2.txt"
 16. просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
     tail -F t2.txt  
      для того чтобы увидеть изменения в файле, надо его сохранять.
