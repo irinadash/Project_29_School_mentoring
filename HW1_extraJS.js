@@ -4,7 +4,7 @@
 Преобразовать написанный код в 26-33 пунктах в функцию, принимающую на вход возраст.
 */
 let age_2 = 20;
-let age_3 = 60;
+let age_3 = 63;
 const checkAge = function(age) {
 if (age < age_2) {
       console.log("You don’t have access cause your age is " + age + " It’s less then " + age_2)
